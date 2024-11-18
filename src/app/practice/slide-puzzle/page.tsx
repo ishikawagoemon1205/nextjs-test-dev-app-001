@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import { useEffect, useState } from "react";
 
@@ -17,7 +17,7 @@ export default function SlidePuzzlePage() {
         const tableElement = document.getElementById("table");
         if (!tableElement) return;
 
-        const newTiles = [];
+        const newTiles:any = [];
         tableElement.innerHTML = ""; // 初期化
 
         for (let i = 0; i < 5; i++) {
@@ -53,7 +53,7 @@ export default function SlidePuzzlePage() {
         }
     };
 
-    const click = (e, tilesArray) => {
+    const click = (e:any, tilesArray:any) => {
         const i = parseInt(e.target.dataset.index, 10);
 
         if (i - 5 >= 0 && tilesArray[i - 5].textContent === "") {
@@ -67,7 +67,7 @@ export default function SlidePuzzlePage() {
         }
     };
 
-    const swap = (a, b, tilesArray) => {
+    const swap = (a:any, b:any, tilesArray:any) => {
         const temp = tilesArray[a].textContent; // 一時退避
         tilesArray[a].textContent = tilesArray[b].textContent;
         tilesArray[b].textContent = temp;
