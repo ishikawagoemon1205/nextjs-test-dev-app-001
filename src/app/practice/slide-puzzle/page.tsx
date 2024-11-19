@@ -55,6 +55,26 @@ export default function SlidePuzzlePage() {
         }
     };
 
+    const click = (e:any, tilesArray:any) => {
+        const i = parseInt(e.target.dataset.index, 10);
+
+        if (i - 5 >= 0 && tilesArray[i - 5].textContent === "") {
+            swap(i, i - 5, tilesArray); // 上と入れ替え
+        } else if (i + 5 < 25 && tilesArray[i + 5].textContent === "") {
+            swap(i, i + 5, tilesArray); // 下と入れ替え
+        } else if (i % 5 !== 0 && tilesArray[i - 1].textContent === "") {
+            swap(i, i - 1, tilesArray); // 左と入れ替え
+        } else if (i % 5 !== 4 && tilesArray[i + 1].textContent === "") {
+            swap(i, i + 1, tilesArray); // 右と入れ替え
+        }
+    };
+
+    const swap = (a:any, b:any, tilesArray:any) => {
+        const temp = tilesArray[a].textContent; // 一時退避
+        tilesArray[a].textContent = tilesArray[b].textContent;
+        tilesArray[b].textContent = temp;
+    };
+
     const standbyDisplay = () => (
         <div className="w-[500px] h-[500px] flex items-center justify-center">
             <button
