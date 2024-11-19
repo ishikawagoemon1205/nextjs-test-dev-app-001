@@ -1,11 +1,12 @@
 "use client";
-import { useState } from "react";
+// import { useState } from "react";
 
 
 export default function SlidePuzzlePage() {
 
-    const [contentStatus, setContentStatus] = useState("start");
-    const [tiles, setTiles] = useState([]);
+    // const [contentStatus, setContentStatus] = useState("start");
+    const contentStatus = "standby";
+    // const [tiles, setTiles] = useState([]);
     const hist = [];
 
     // useEffect(() => {
@@ -18,7 +19,7 @@ export default function SlidePuzzlePage() {
         <div className="w-[500px] h-[500px] flex items-center justify-center">
             <button
                 className="bg-[#ffffff] hover:bg-gray-300 w-[200px] h-[30px] rounded-[4px]"
-                onClick={() => setContentStatus("start")}
+                // onClick={() => setContentStatus("start")}
             >
                 <h4 className="text-[#000000] font-bold">スタート</h4>
             </button>
