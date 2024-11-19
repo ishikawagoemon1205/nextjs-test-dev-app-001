@@ -1,5 +1,5 @@
 "use client";
-import { useEffect , useState } from "react";
+// import { useEffect , useState } from "react";
 
 
 export default function SlidePuzzlePage() {
@@ -9,11 +9,11 @@ export default function SlidePuzzlePage() {
     const tiles = [];
     const hist = [];
 
-    useEffect(() => {
-        if (contentStatus === "start") {
-            init();
-        }
-    }, [contentStatus]);
+    // useEffect(() => {
+    //     if (contentStatus === "start") {
+    //         init();
+    //     }
+    // }, [contentStatus]);
 
     const init = () => {
         const tableElement = document.getElementById("table");
